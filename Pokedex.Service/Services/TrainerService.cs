@@ -2,7 +2,6 @@
 using Pokedex.Core.DTOs;
 using Pokedex.Core.Models;
 using Pokedex.Core.Repositories;
-using Pokedex.Core.Services;
 using Pokedex.Core.UnitOfWorks;
 using System;
 using System.Collections.Generic;
