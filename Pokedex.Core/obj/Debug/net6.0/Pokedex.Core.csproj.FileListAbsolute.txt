@@ -1,0 +1,12 @@
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\bin\Debug\net6.0\Pokedex.Core.deps.json
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\bin\Debug\net6.0\Pokedex.Core.dll
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\bin\Debug\net6.0\Pokedex.Core.pdb
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.csproj.AssemblyReference.cache
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.AssemblyInfoInputs.cache
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.AssemblyInfo.cs
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.csproj.CoreCompileInputs.cache
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.dll
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\refint\Pokedex.Core.dll
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\Pokedex.Core.pdb
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Core\obj\Debug\net6.0\ref\Pokedex.Core.dll
