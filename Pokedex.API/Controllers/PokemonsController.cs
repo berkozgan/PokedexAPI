@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Pokedex.Core.DTOs;
-using Pokedex.Core.Models;
-using Pokedex.Core.Services;
+using Pokedex.Domain.DTOs;
+using Pokedex.Domain.Models;
+using Pokedex.Domain.Services;
 
 namespace Pokedex.API.Controllers
 {
-    
+
     public class PokemonsController : CustomBaseController
     {
         private readonly IMapper _mapper;
@@ -17,6 +17,7 @@ namespace Pokedex.API.Controllers
         {
             _pokedexService = pokedexService;
             _mapper = mapper;
+
         }
 
         [HttpGet("[action]")]
@@ -72,9 +73,6 @@ namespace Pokedex.API.Controllers
         }
 
         
-
-
-
 
 
 

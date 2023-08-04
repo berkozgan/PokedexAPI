@@ -933,13 +933,26 @@
           "bin/placeholder/Pokedex.Core.dll": {}
         }
       },
+      "Pokedex.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Pokedex.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pokedex.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pokedex.Domain.dll": {}
+        }
+      },
       "Pokedex.Repository/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20",
-          "Pokedex.Core": "1.0.0"
+          "Pokedex.Domain": "1.0.0"
         },
         "compile": {
           "bin/placeholder/Pokedex.Repository.dll": {}
@@ -2572,6 +2585,11 @@
       "type": "project",
       "path": "../Pokedex.Core/Pokedex.Core.csproj",
       "msbuildProject": "../Pokedex.Core/Pokedex.Core.csproj"
+    },
+    "Pokedex.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Pokedex.Domain/Pokedex.Domain.csproj",
+      "msbuildProject": "../Pokedex.Domain/Pokedex.Domain.csproj"
     },
     "Pokedex.Repository/1.0.0": {
       "type": "project",

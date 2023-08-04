@@ -542,11 +542,19 @@
           "Pokedex.Core.dll": {}
         }
       },
+      "Pokedex.Domain/1.0.0": {
+        "dependencies": {
+          "Pokedex.Core": "1.0.0"
+        },
+        "runtime": {
+          "Pokedex.Domain.dll": {}
+        }
+      },
       "Pokedex.Repository/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "6.0.20",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.20",
-          "Pokedex.Core": "1.0.0"
+          "Pokedex.Domain": "1.0.0"
         },
         "runtime": {
           "Pokedex.Repository.dll": {}
@@ -934,6 +942,11 @@
       "hashPath": "system.windows.extensions.4.7.0.nupkg.sha512"
     },
     "Pokedex.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Pokedex.Domain/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

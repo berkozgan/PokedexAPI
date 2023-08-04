@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
-using Pokedex.Core.DTOs;
-using Pokedex.Core.Models;
+using Pokedex.Domain.DTOs;
+using Pokedex.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,7 +18,7 @@ namespace Pokedex.Service.Mapping
             CreateMap<PokemonUpdateDto, Pokemon>();
             CreateMap<Trainer,TrainerWithPokemonsDto>();
             CreateMap<Pokemon,PokemonWithTrainersDto>();
-            CreateMap<CustomResponseDto<TrainerWithPokemonsDto>, TrainerWithPokemonsDto>();
+            //CreateMap<CustomResponseDto<TrainerWithPokemonsDto>, TrainerWithPokemonsDto>();
 
         }
     }

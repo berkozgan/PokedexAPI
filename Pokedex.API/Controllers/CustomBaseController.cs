@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Pokedex.Core.DTOs;
+using Pokedex.Domain.DTOs;
 
 namespace Pokedex.API.Controllers
 {
@@ -11,7 +11,7 @@ namespace Pokedex.API.Controllers
         [NonAction] 
         public IActionResult CreateActionResult<T>(CustomResponseDto<T> response)
         {
-            if (response.StatusCode == 204)
+            if (response.StatusCode == 204)//nocontent
                 return new ObjectResult(null)
                 {
                     StatusCode = response.StatusCode

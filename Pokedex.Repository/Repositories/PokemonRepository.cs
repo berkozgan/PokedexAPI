@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Pokedex.Core.Models;
-using Pokedex.Core.Repositories;
+
+using Pokedex.Domain.Models;
+using Pokedex.Domain.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;

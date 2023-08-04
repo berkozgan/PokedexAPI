@@ -795,6 +795,19 @@
         "runtime": {
           "bin/placeholder/Pokedex.Core.dll": {}
         }
+      },
+      "Pokedex.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "Pokedex.Core": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Pokedex.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Pokedex.Domain.dll": {}
+        }
       }
     }
   },
@@ -2021,6 +2034,11 @@
       "type": "project",
       "path": "../Pokedex.Core/Pokedex.Core.csproj",
       "msbuildProject": "../Pokedex.Core/Pokedex.Core.csproj"
+    },
+    "Pokedex.Domain/1.0.0": {
+      "type": "project",
+      "path": "../Pokedex.Domain/Pokedex.Domain.csproj",
+      "msbuildProject": "../Pokedex.Domain/Pokedex.Domain.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -2028,7 +2046,7 @@
       "Microsoft.EntityFrameworkCore >= 6.0.20",
       "Microsoft.EntityFrameworkCore.SqlServer >= 6.0.20",
       "Microsoft.EntityFrameworkCore.Tools >= 6.0.20",
-      "Pokedex.Core >= 1.0.0"
+      "Pokedex.Domain >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -2064,8 +2082,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\berk.ozgan\\source\\repos\\PokedexApp\\Pokedex.Core\\Pokedex.Core.csproj": {
-              "projectPath": "C:\\Users\\berk.ozgan\\source\\repos\\PokedexApp\\Pokedex.Core\\Pokedex.Core.csproj"
+            "C:\\Users\\berk.ozgan\\source\\repos\\PokedexApp\\Pokedex.Domain\\Pokedex.Domain.csproj": {
+              "projectPath": "C:\\Users\\berk.ozgan\\source\\repos\\PokedexApp\\Pokedex.Domain\\Pokedex.Domain.csproj"
             }
           }
         }

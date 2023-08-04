@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Microsoft.Extensions.Configuration;
-using Pokedex.Core.Models;
+using Pokedex.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;

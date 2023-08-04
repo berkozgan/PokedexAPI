@@ -1,9 +1,10 @@
 ﻿using AutoMapper;
-using Pokedex.Core.DTOs;
-using Pokedex.Core.Models;
 using Pokedex.Core.Repositories;
-using Pokedex.Core.Services;
 using Pokedex.Core.UnitOfWorks;
+using Pokedex.Domain.DTOs;
+using Pokedex.Domain.Models;
+using Pokedex.Domain.Repositories;
+using Pokedex.Domain.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;

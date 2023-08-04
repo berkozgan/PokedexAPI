@@ -15,3 +15,5 @@ C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Repository\obj\Debug\net6.0\
 C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Repository\obj\Debug\net6.0\Pokedex.Repository.pdb
 C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Repository\obj\Debug\net6.0\Pokedex.Repository.genruntimeconfig.cache
 C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Repository\obj\Debug\net6.0\ref\Pokedex.Repository.dll
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Repository\bin\Debug\net6.0\Pokedex.Domain.dll
+C:\Users\berk.ozgan\source\repos\PokedexApp\Pokedex.Repository\bin\Debug\net6.0\Pokedex.Domain.pdb
