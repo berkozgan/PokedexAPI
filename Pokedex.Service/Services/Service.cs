@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 using Pokedex.Core.Repositories;
 using Pokedex.Core.Services;
 using Pokedex.Core.UnitOfWorks;
+using Pokedex.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,11 +18,14 @@ namespace Pokedex.Service.Services
     {
         private readonly IGenericRepository<T> _repository;
         private readonly IUnitOfWork _unitOfWork;
+        
+
 
         public Service(IUnitOfWork unitOfWork, IGenericRepository<T> repository)
         {
             _unitOfWork = unitOfWork;
             _repository = repository;
+            
         }
 
         public async Task<T> AddAsync(T entity)
@@ -52,7 +57,8 @@ namespace Pokedex.Service.Services
             var hasProduct=  await _repository.GetByIdAsync(id);
             if (hasProduct==null)
             {
-                throw new Exception($"{typeof(T).Name}({id}) is not found");
+                
+                throw new NotFoundException($"{typeof(T).Name}({id}) is not found");
             }
             return hasProduct;
         }

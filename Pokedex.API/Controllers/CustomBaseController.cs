@@ -8,6 +8,8 @@ namespace Pokedex.API.Controllers
     [ApiController]
     public class CustomBaseController : ControllerBase
     {
+        
+
         [NonAction] 
         public IActionResult CreateActionResult<T>(CustomResponseDto<T> response)
         {

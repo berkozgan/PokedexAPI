@@ -1,6 +1,7 @@
 using Autofac;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
+using Pokedex.API.Middlewares;
 using Pokedex.API.Modules;
 using Pokedex.Repository;
 using Pokedex.Service.Mapping;
@@ -14,7 +15,6 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
@@ -35,6 +35,10 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 
+//builder.Logging.ClearProviders();
+//builder.Logging.AddConsole();
+
+//builder.Logging.AddDebug();
 
 
 var app = builder.Build();
@@ -47,6 +51,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.CustomException();//exception middleware
 
 app.UseAuthorization();
 

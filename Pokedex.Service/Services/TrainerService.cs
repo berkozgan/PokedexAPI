@@ -6,11 +6,13 @@ using Pokedex.Domain.DTOs;
 using Pokedex.Domain.Models;
 using Pokedex.Domain.Repositories;
 using Pokedex.Domain.Services;
+using Pokedex.Service.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 
 namespace Pokedex.Service.Services
 {
@@ -31,6 +33,12 @@ namespace Pokedex.Service.Services
         public async Task<CustomResponseDto<TrainerWithPokemonsDto>> GetSingleTrainerByIdWithPokemonsAsync(int trainerId)
         {
             var trainer = await _trainerRepository.GetSingleTrainerByIdWithPokemonsAsync(trainerId);
+
+            if (trainer == null)
+            {
+                throw new NotFoundException($"{typeof(TrainerDto).Name}({trainerId}) not found");//typeof çünkü generic TEntity alıyo bilmiyoruz
+            }
+
             var trainerDto = _mapper.Map<TrainerWithPokemonsDto>(trainer);
 
             return CustomResponseDto<TrainerWithPokemonsDto>.Success(200, trainerDto);

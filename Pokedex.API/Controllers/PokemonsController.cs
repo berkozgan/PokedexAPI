@@ -12,17 +12,20 @@ namespace Pokedex.API.Controllers
     {
         private readonly IMapper _mapper;
         private readonly IPokemonService _pokedexService;
+        private readonly ILogger<PokemonsController> _logger;
 
-        public PokemonsController(IPokemonService pokedexService, IMapper mapper)
+
+        public PokemonsController(IPokemonService pokedexService, IMapper mapper, ILogger<PokemonsController> logger)
         {
             _pokedexService = pokedexService;
             _mapper = mapper;
-
+            _logger = logger;
         }
 
         [HttpGet("[action]")]
         public async Task<IActionResult> GetPokemonsWithTrainer() 
         {
+            _logger.LogInformation("GetPokemonsWithTrainer action has been called");
             return CreateActionResult(await _pokedexService.GetPokemonsWithTrainer());     //
         }
 
@@ -33,6 +36,8 @@ namespace Pokedex.API.Controllers
             var pokemons = await _pokedexService.GetAllAsync();
             var pokemonsDtos= _mapper.Map<List<PokemonDto>>(pokemons.ToList());
 
+            _logger.LogInformation("GetAllPokemons action has been called");
+
             return CreateActionResult(CustomResponseDto<List<PokemonDto>>.Success(200, pokemonsDtos));
         }
 
@@ -42,6 +47,7 @@ namespace Pokedex.API.Controllers
             var pokemon = await _pokedexService.GetByIdAsync(id);
             var pokemonDto= _mapper.Map<PokemonDto>(pokemon);
 
+            _logger.LogInformation("GetById action has been called");
             return CreateActionResult(CustomResponseDto<PokemonDto>.Success(200, pokemonDto));
         }
 
@@ -51,6 +57,7 @@ namespace Pokedex.API.Controllers
             var pokemon =  await _pokedexService.AddAsync(_mapper.Map<Pokemon>(pokemonDto));
             var pokemonsDto = _mapper.Map<PokemonDto>(pokemon);
 
+            _logger.LogInformation("Save action has been called");
             return CreateActionResult(CustomResponseDto<PokemonDto>.Success(201, pokemonsDto));
 
         }
@@ -60,6 +67,7 @@ namespace Pokedex.API.Controllers
         {
             await _pokedexService.UpdateAsync(_mapper.Map<Pokemon>(pokemonDto));
 
+            _logger.LogInformation("Update action has been called");
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));//204 nocontent olunmca
         }
 
@@ -69,6 +77,7 @@ namespace Pokedex.API.Controllers
             var pokemon = await _pokedexService.GetByIdAsync(id);
             await _pokedexService.RemoveAsync(pokemon);
 
+            _logger.LogInformation("RemoveById action has been called");
             return CreateActionResult(CustomResponseDto<NoContentDto>.Success(204));
         }
 
