@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Diagnostics;
+using Pokedex.API.Controllers;
 using Pokedex.Domain.DTOs;
 using Pokedex.Service.Exceptions;
 using System.Runtime.CompilerServices;
@@ -8,9 +9,12 @@ namespace Pokedex.API.Middlewares
 {
     public static class CustomExceptionHandler
     {
+
+       
        
         public static void CustomException(this IApplicationBuilder app)
         {
+            
             
             app.UseExceptionHandler(config =>
             {
@@ -28,7 +32,7 @@ namespace Pokedex.API.Middlewares
                     context.Response.StatusCode = StatusCode;
                     var response = CustomResponseDto<NoContentDto>.Fail(StatusCode, exceptionFeature.Error.Message);
 
-                    //LOG
+                    //log?
 
                     await context.Response.WriteAsync(JsonSerializer.Serialize(response));
 

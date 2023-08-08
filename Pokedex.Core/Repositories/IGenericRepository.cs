@@ -11,7 +11,7 @@ namespace Pokedex.Core.Repositories
     public interface IGenericRepository<T> where T : class 
     {
         Task<T> GetByIdAsync(int id);
-        IQueryable<T> GetAll();//list yerine iquery çünkü bu sekilde direkt veritabanına gitme lolist/async gibi metodları ağırınca gider
+        IQueryable<T> GetAll();//list yerine iquery çünkü bu sekilde direkt veritabanına gitme lolist/async gibi metodları ağırınca gider.
 
         IQueryable<T> Where(Expression<Func<T, bool>> expression);
 
@@ -21,7 +21,7 @@ namespace Pokedex.Core.Repositories
 
         Task AddRangeAsync(IEnumerable<T> entities);
 
-        void Update(T entity);                  //update-delete zaten track edildiği içiçn kısa sürüyo async kullanmıyorum
+        void Update(T entity);                  //update-delete zaten track edildiği içiçn kısa sürüyo async kullanmıyorum.
         void Remove(T entity);
 
         void RemoveRange(IEnumerable<T> entities);

@@ -9,12 +9,16 @@ using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
+
 // Add services to the container.
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+
 
 builder.Services.AddAutoMapper(typeof(MapProfile));
 
@@ -35,10 +39,10 @@ builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory());
 builder.Host.ConfigureContainer<ContainerBuilder>(containerBuilder => containerBuilder.RegisterModule(new RepoServiceModule()));
 
 
-//builder.Logging.ClearProviders();
-//builder.Logging.AddConsole();
+builder.Logging.ClearProviders();
+builder.Logging.AddConsole();
 
-//builder.Logging.AddDebug();
+builder.Logging.AddDebug();
 
 
 var app = builder.Build();

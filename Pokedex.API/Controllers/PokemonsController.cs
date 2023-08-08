@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Pokedex.Domain.DTOs;
 using Pokedex.Domain.Models;
 using Pokedex.Domain.Services;
+using Pokedex.Service.Exceptions;
 
 namespace Pokedex.API.Controllers
 {
@@ -44,11 +44,24 @@ namespace Pokedex.API.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> GetById(int id)
         {
-            var pokemon = await _pokedexService.GetByIdAsync(id);
-            var pokemonDto= _mapper.Map<PokemonDto>(pokemon);
 
-            _logger.LogInformation("GetById action has been called");
-            return CreateActionResult(CustomResponseDto<PokemonDto>.Success(200, pokemonDto));
+            try
+            {
+                var pokemon = await _pokedexService.GetByIdAsync(id);
+                var pokemonDto = _mapper.Map<PokemonDto>(pokemon);
+
+                _logger.LogInformation("GetById action has been called");
+                return CreateActionResult(CustomResponseDto<PokemonDto>.Success(200, pokemonDto));
+
+
+            }
+            catch (NotFoundException)
+            {
+                _logger.LogError($"Unvalid id({id}) has been registered");
+                throw;
+            }
+
+
         }
 
         [HttpPost]

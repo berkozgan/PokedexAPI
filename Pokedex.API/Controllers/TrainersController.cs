@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Pokedex.Domain.DTOs;
 using Pokedex.Domain.Models;
 using Pokedex.Domain.Services;
+using Pokedex.Service.Exceptions;
 
 namespace Pokedex.API.Controllers
 {
@@ -35,14 +36,22 @@ namespace Pokedex.API.Controllers
         [HttpGet("[action]/{trainerId}")]
         public async Task<IActionResult> GetSingleTrainerByIdWithPokemons(int trainerId)
         {
-            //var trainer = await _trainerService.GetSingleTrainerByIdWithPokemonsAsync(trainerId);
-            //var trainerDto = _mapper.Map<TrainerWithPokemonsDto>(trainer);
-
-            _logger.LogInformation("GetSingleTrainerByIdWithPokemons action has been called");
+            try
+            {
+                _logger.LogInformation("GetSingleTrainerByIdWithPokemons action has been called");
 
             return CreateActionResult(await _trainerService.GetSingleTrainerByIdWithPokemonsAsync(trainerId));
 
-            // return CreateActionResult(CustomResponseDto<TrainerWithPokemonsDto>.Success(200, trainerDto));
+            }
+            catch (NotFoundException)
+            {
+                _logger.LogError($"Unvalid id({trainerId} has been registered.)");
+                throw;
+            }
+
+           
+
+            
         }
 
         [HttpPost]
